@@ -6,11 +6,13 @@ import { UserModel } from '../models/user.model';
 
 @Injectable()
 export class AddUserService {
-  private url: string = 'http://localhost:4200/addUser';
+  private uri: string = 'http://localhost:8080/users';
   constructor(private http: Http) { }
 
-  addUser(userModel: UserModel): Observable<Response> {
-    var options = '';
-    return this.http.post(this.url, userModel, options) as any;
+  addUser(userModel: UserModel){
+    // var options = '';
+    this.http.post(this.uri, userModel).subscribe();
+
+    // return this.http.post(this.url, userModel, options) as any;
   }
 }

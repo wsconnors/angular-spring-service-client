@@ -9,7 +9,6 @@ import {AddUserService} from '../../services/add-user.service';
 })
 export class UserInputTableComponent implements OnInit {
   user: UserModel = {
-    id: "",
     firstName: "User Name"
   };
 
@@ -20,12 +19,10 @@ export class UserInputTableComponent implements OnInit {
   ngOnInit() {
   }
 
-  createUser(): UserModel {
-    return new UserModel(this.user.firstName, this.user.id);
-  }
-
-  addUser(): any {
-    return this.addUserService.addUser(this.createUser());
+  addUser(){
+    console.log(this.user);
+    // return this.addUserService.addUser(this.createUser());
+    this.addUserService.addUser(this.user)
   }
 
 

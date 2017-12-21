@@ -1,10 +1,19 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { AddUserService } from './services/add-user.service';
+import { Http, ConnectionBackend,RequestOptions,HttpModule } from '@angular/http';
+
+
+import { UserInputTableComponent } from './components/user-input-table/user-input-table.component'
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers:[AddUserService,HttpModule],
+      imports:[FormsModule,HttpModule],
       declarations: [
-        AppComponent
+        AppComponent,
+        UserInputTableComponent
       ],
     }).compileComponents();
   }));
