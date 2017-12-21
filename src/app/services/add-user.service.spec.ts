@@ -7,7 +7,7 @@ describe('AddUserService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers:[AddUserService,HttpModule],
-      imports:[HttpModule],
+      imports:[HttpModule]
 
     });
   });

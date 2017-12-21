@@ -9,7 +9,7 @@ import {AddUserService} from '../../services/add-user.service';
 })
 export class UserInputTableComponent implements OnInit {
   user: UserModel = {
-    firstName: "User Name"
+    firstName: ""
   };
 
 
